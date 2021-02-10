@@ -1,0 +1,26 @@
+<% provide(:title) { t("sdg.goals.help.title") } %>
+
+<section class="row sdg-help-content">
+  <%= back_link_to help_path %>
+  <h1><%= t("sdg.goals.help.title") %></h1>
+  <p><%= t("sdg.goals.help.description") %></p>
+  <ul class="tabs" id="help_tabs" data-deep-link="true" data-tabs>
+    <% @goals.each do |goal| %>
+      <li class="tabs-title <%= is_active?(goal) %>">
+        <%= link_to "#goal_#{goal.code}_targets_tab", "aria-selected": goal.code == 1 do %>
+          <% render SDG::Goals::IconComponent.new(goal) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="tabs-content" data-tabs-content="help_tabs">
+    <% @goals.each do |goal| %>
+      <div id="goal_<%= goal.code %>_targets_tab" class="tabs-panel tabs-icons <%= is_active?(goal) %>">
+        <h2><%= goal.code_and_title %></h2>
+        <%= sanitize t("sdg.goals.goal_#{goal.code}.long_description") %>
+        <%= render SDG::Goals::TargetsComponent.new(goal) %>
+      </div>
+    <% end %>
+  </div>
+</section>
