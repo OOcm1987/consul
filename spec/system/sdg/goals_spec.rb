@@ -122,7 +122,7 @@ describe "SDG Goals", :js do
       create(:sdg_local_target, code: "15.1.1", title: "SDG local target sample text")
       visit sdg_goal_path(15)
 
-      within "#target_tabs" do
+      within ".sdg-goal-targets" do
         expect(page).to have_content "Targets"
         expect(page).to have_content "Local targets"
       end
@@ -138,6 +138,27 @@ describe "SDG Goals", :js do
         expect(page).to have_content "15.1.1 SDG local target sample text"
         expect(page).not_to have_content "15.1 By 2020, ensure the conservation, restoration and sustainable"
       end
+    end
+  end
+
+  describe "Help" do
+    scenario "shows all SDGs targets" do
+      create(:sdg_local_target, code: "15.1.1", title: "SDG local target sample text")
+      visit sdg_help_path
+
+      click_link "7. Affordable and Clean Energy"
+
+      expect(page).to have_css "h2", exact_text: "7. Affordable and Clean Energy"
+      expect(page).to have_content "The world is making progress towards Goal 7, with encouraging signs"
+      expect(page).to have_content "7.1 By 2030, ensure universal access to affordable"
+
+      click_link "15. Life on Land"
+      expect(page).to have_css "h2", exact_text: "15. Life on Land"
+      expect(page).to have_content "Nature is critical to our survival: nature provides us with our oxygen"
+      expect(page).to have_content "15.1 By 2020, ensure the conservation, restoration and sustainable use"
+
+      click_link "Local targets"
+      expect(page).to have_content "SDG local target sample text"
     end
   end
 end
