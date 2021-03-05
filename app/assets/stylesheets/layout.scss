@@ -700,7 +700,7 @@ body > header,
 }
 
 .top-links {
-  background: $dark;
+  background: #F1B591;
   color: #fff;
   font-size: $small-font-size;
   padding-right: $line-height / 2;
@@ -755,12 +755,15 @@ body > header,
   }
 
   a {
-    color: #fff;
+    font-family: 'Montserrat', sans-serif !important;
+    color: #BE7153 !important ;
     display: inline-block;
     line-height: $line-height * 2;
     position: relative;
     text-align: left;
     width: 100%;
+    font-size: 1em;
+    font-weight: 500 !important;
 
     @include breakpoint(medium) {
       color: $text;
@@ -769,7 +772,7 @@ body > header,
       width: auto;
 
       &:hover {
-        color: $link;
+        color: #5A2C1B;
       }
     }
 
@@ -1032,7 +1035,7 @@ footer {
   position: relative;
 
   label {
-    color: #fff;
+    color: #5A2C1B;
     font-size: $tiny-font-size;
     font-weight: normal;
   }
@@ -1048,7 +1051,7 @@ footer {
   }
 
   .locale-switcher {
-    background: #001d33;
+    background: #BE7153;
     border: 0;
     border-radius: rem-calc(4);
     color: #fff;
