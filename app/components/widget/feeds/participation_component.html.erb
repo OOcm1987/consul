@@ -1,6 +1,6 @@
-<div class="row margin-bottom feeds-list feeds-participation">
+<div class="row margin-bottom feeds-list feeds-participation sws">
   <% feeds.each do |feed| %>
-    <% if feed_proposals?(feed) || feed_debates?(feed) %>
+    <% if feed_proposals?(feed) %>
       <%= render Widget::Feeds::FeedComponent.new(feed) %>
     <% end %>
   <% end %>

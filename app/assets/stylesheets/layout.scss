@@ -2655,6 +2655,15 @@ table {
   h2 {
     &.title {
       @include header-font-size(h3);
+      font-weight: 600 !important;
+      font-family: 'Montserrat', sans-serif !important;
+      color: #5A2C1B !important;
+    }
+  }
+
+  h2 {
+    &.all-wt {
+      min-width: 100% !important;
     }
   }
 
@@ -2772,4 +2781,127 @@ table {
       margin-right: $line-height / 4;
     }
   }
+}
+
+.contenedor-1{
+  position: relative;
+  height: 250px;
+  float: left;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+}
+
+.contenedor-2{
+  position: relative;
+}
+
+.contenedor-3{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  z-index: 1;
+  background-color:rgba(166,96,96,0.8);
+  height: 42px;
+
+  strong{
+    color: #FFFFFF !important;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    padding: 7px;
+    float: left;
+    height: 42px;
+    display: flex;
+    align-items: center;
+  }
+  
+  &:hover{
+    text-decoration: none;
+  }
+}
+
+.contenedor-4{
+  width: 100%;
+  position: relative;
+}
+
+.contenedor-4 img{
+  max-width: 100%;
+}
+
+.icon-middle{
+  width: 42px;
+  height: 42px;
+  float: left;
+  background: #F1B591;
+  text-align: center;
+  padding: 10px;
+}
+
+.icon-middle-2{
+  width: 100%;
+  height: 62px;
+  float: left;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.icon-middle i{
+  color: #FFFFFF;
+}
+
+.icon-middle-2 i{
+  color: #FFFFFF;
+  margin: 0 auto;
+}
+
+.icon-middle-2 i::before {
+  font-size: 50px;
+}
+
+.hover-contenedor:hover .contenedor-5{
+  top: 0;
+  opacity: 1;
+}
+
+.contenedor-5{
+  padding: 20px 20px 20px 20px;
+  background-color:rgba(166,96,96,0.8);
+  top: -100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+}
+
+.link-p-go{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-size: 12px;
+  border: 2px solid #FFFFFF;
+  padding: 4px 30px;
+  border-radius: 4px;
+
+  &:hover{
+    text-decoration: none;
+    color: #FFFFFF;
+  }
+}
+
+.text-p-go{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 16px;
 }

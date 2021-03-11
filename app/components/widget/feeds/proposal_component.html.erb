@@ -1,17 +1,18 @@
-<div class="proposal">
-  <div class="feed-description small-12 column
-             <%= "medium-6 large-9" if proposal.image.present? %>">
-    <strong><%= link_to proposal.title, url_for(proposal) %></strong><br>
-    <p><%= proposal.summary %></p>
-    <%= render SDG::TagListComponent.new(proposal, limit: 5) %>
-  </div>
-
-  <% if proposal.image.present? %>
-    <div class="small-12 medium-6 large-3 column">
-      <div class="feed-image">
-        <%= image_tag proposal.image_url(:thumb),
-                      alt: proposal.image.title.unicode_normalize %>
+<div class="small-12 medium-4 large-4 column hover-contenedor">
+  <div class="contenedor-2">
+    <% if proposal.image.present? %>
+      <div class="contenedor-4">
+          <%= image_tag proposal.image_url(:thumb), class: "", alt: proposal.image.title.unicode_normalize %>
       </div>
+    <% end %>
+    <div class="small-12 column contenedor-3">
+      <span class="icon-middle"><i class="fas fa-users"></i></span>
+      <strong><%= proposal.title %></strong>
     </div>
-  <% end %>
+    <div class="small-12 column contenedor-5">
+      <span class="icon-middle-2"><i class="fas fa-users"></i></span>
+      <p class="text-p-go"><%= proposal.summary %></p>
+      <%= link_to "Saber más", url_for(proposal), class: "link-p-go" %>
+    </div>
+  </div>
 </div>
