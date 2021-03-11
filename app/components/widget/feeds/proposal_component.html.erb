@@ -2,7 +2,7 @@
   <div class="contenedor-2">
     <% if proposal.image.present? %>
       <div class="contenedor-4">
-          <%= image_tag proposal.image_url(:thumb), class: "", alt: proposal.image.title.unicode_normalize %>
+          <%= image_tag proposal.image_url(:large), class: "", alt: proposal.image.title.unicode_normalize %>
       </div>
     <% end %>
     <div class="small-12 column contenedor-3">
